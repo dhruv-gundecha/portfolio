@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dhruv Gundecha</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet"/>
+  <script src="https://kit.fontawesome.com/cecd160009.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #282C33;
+      color: #F4F4F4;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .typewriter {
+      overflow: hidden;
+      white-space: nowrap;
+      letter-spacing: 2px;
+      color: #6099A1;
+      width: 0;
+      animation: typing 2.5s steps(18, end) forwards;
+    }
+
+    .tagline {
+      margin-top: 15px;
+      font-size: 1.2rem;
+      color: #F4F4F4;
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+      animation-delay: 2.6s;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 18ch; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* About Section */
+    .about {
+      max-width: 700px;
+      margin: 100px auto;
+      padding: 0 20px;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+
+    .about.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .about h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #6099A1;
+    }
+
+    .about p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #F4F4F4;
+    }
+
+    .resume-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background-color: #6099A1;
+      color: #282C33;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: transform 0.2s ease, background 0.3s ease;
+    }
+
+    .resume-btn:hover {
+      background-color: #4D7F86;
+      transform: scale(1.05);
+    }
+
+    /* Contact */
+    .contact {
+      text-align: center;
+      margin: 60px 0;
+    }
+
+    .contact a {
+      margin: 0 10px;
+      color: #6099A1;
+      font-size: 1.6rem;
+      transition: transform 0.3s ease, color 0.3s;
+    }
+
+    .contact a:hover {
+      transform: scale(1.2);
+      color: #4D7F86;
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1 class="typewriter">Dhruv Gundecha</h1>
+    <p class="tagline">Cybersecurity Graduate Student | Aspiring Security Engineer</p>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <h2>About Me</h2>
+    <p>
+      I am a graduate student in Cybersecurity Engineering with hands-on experience in application security, OSINT research, and threat detection.
+     My projects range from building SIEM environments and honeypots to developing custom Python scripts for web exploitation, automation, and security testing. 
+     I enjoy diving into new security domains, working with open-source tools, and applying my knowledge to strengthen systems against real-world threats.
+      You can find my resume below:
+    </p>
+    <a href="resume.pdf" target="_blank" class="resume-btn">View Resume</a>
+  </section>
+
+  <!-- Contact Section -->
+  <div class="contact">
+    <a href="https://www.linkedin.com/in/dhruv-gundecha" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://github.com/dhruv-gundecha" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="mailto:dhruvgundecha10@gmail.com"><i class="fas fa-envelope"></i></a>
+  </div>
+
+  <script>
+    const about = document.querySelector('.about');
+    window.addEventListener('scroll', () => {
+      const pos = about.getBoundingClientRect().top;
+      if (pos < window.innerHeight - 100) {
+        about.classList.add('show');
+      }
+    });
+  </script>
+</body>
+</html>
